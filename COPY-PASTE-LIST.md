@@ -1,9 +1,10 @@
-# COPYPASTE LIST 
+# COPYPASTE LIST
 
 because there is no point in literally typing out svg icons lol
 
-### Tailwind brand colors
-```
+## Tailwind brand colors
+
+```js
 brand: {
     "25": "#F8F9FD",
     "50": "#F0F4FA",
@@ -23,8 +24,9 @@ brand: {
 "discord-timestamp": "#72767d",
 ```
 
-### DISCORD ICON
-```
+## DISCORD ICON
+
+```jsx
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 127.14 96.36"
@@ -36,8 +38,9 @@ brand: {
 </svg>
 ```
 
-### CODE SNIPPET
-```
+## CODE SNIPPET
+
+```js
 `await fetch("http://localhost:3000/api/v1/events", {
   method: "POST",
   body: JSON.stringify({
@@ -54,8 +57,9 @@ brand: {
 })`
 ```
 
-### VERIFICATION BADGE
-```
+## VERIFICATION BADGE
+
+```jsx
 <svg
   width="18"
   height="18"
@@ -71,8 +75,9 @@ brand: {
 </svg>
 ```
 
-### BACKGROUND PATTERN
-```
+## BACKGROUND PATTERN
+
+```jsx
 <svg
   width="768"
   height="736"
@@ -168,8 +173,9 @@ brand: {
 </svg>
 ```
 
-### COLOR CODES
-```
+## COLOR CODES
+
+```js
 "#FF6B6B", // bg-[#FF6B6B] ring-[#FF6B6B] Bright Red
 "#4ECDC4", // bg-[#4ECDC4] ring-[#4ECDC4] Teal
 "#45B7D1", // bg-[#45B7D1] ring-[#45B7D1] Sky Blue
@@ -182,8 +188,9 @@ brand: {
 "#E17055", // bg-[#E17055] ring-[#E17055] Terracotta
 ```
 
-### EMOJI LIST
-```
+## EMOJI LIST
+
+```js
 { emoji: "💰", label: "Money (Sale)" },
 { emoji: "👤", label: "User (Sign-up)" },
 { emoji: "🎉", label: "Celebration" },
@@ -196,8 +203,9 @@ brand: {
 { emoji: "🔔", label: "Notification" },
 ```
 
-### DASHBOARD CODE SNIPPET
-```
+## DASHBOARD CODE SNIPPET
+
+```js
 `await fetch('https://pingpanda.io/api/events', {
   method: 'POST',
   headers: {
