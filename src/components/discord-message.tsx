@@ -1,6 +1,6 @@
-import { Clock } from "lucide-react"
-
 import Image from "next/image"
+
+import { Clock } from "lucide-react"
 
 import { cn } from "@/utils"
 

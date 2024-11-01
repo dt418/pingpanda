@@ -1,9 +1,9 @@
 "use client"
 
 import { ReactNode } from "react"
-import { ArrowLeft } from "lucide-react"
-
 import { useRouter } from "next/navigation"
+
+import { ArrowLeft } from "lucide-react"
 
 import { Heading } from "./heading"
 import { Button } from "./ui/button"

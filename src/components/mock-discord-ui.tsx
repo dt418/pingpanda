@@ -1,4 +1,6 @@
 import { PropsWithChildren } from "react"
+import Image from "next/image"
+
 import {
   Cog,
   Gift,
@@ -16,8 +18,6 @@ import {
   UserCircle,
   Video,
 } from "lucide-react"
-
-import Image from "next/image"
 
 import { Icons } from "./icons"
 

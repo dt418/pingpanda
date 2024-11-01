@@ -1,7 +1,7 @@
+import { redirect } from "next/navigation"
+
 import { currentUser } from "@clerk/nextjs/server"
 import { PlusIcon } from "lucide-react"
-
-import { redirect } from "next/navigation"
 
 import { CreateEventCategoryModal } from "@/components/create-event-category-modal"
 import { DashboardPage } from "@/components/dashboard-page"

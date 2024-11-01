@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
+
 import { Event, EventCategory } from "@prisma/client"
 import { useQuery } from "@tanstack/react-query"
 import {
@@ -17,8 +19,6 @@ import {
 } from "@tanstack/react-table"
 import { isAfter, isToday, startOfMonth, startOfWeek } from "date-fns"
 import { ArrowUpDown, BarChart } from "lucide-react"
-
-import { useRouter, useSearchParams } from "next/navigation"
 
 import { Heading } from "@/components/heading"
 import { Button } from "@/components/ui/button"

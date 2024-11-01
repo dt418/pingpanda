@@ -1,8 +1,8 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
-import { Check, Star } from "lucide-react"
-
 import Image from "next/image"
+
+import { Check, Star } from "lucide-react"
 
 import { DiscordMessage } from "@/components/discord-message"
 import { Heading } from "@/components/heading"

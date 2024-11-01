@@ -1,8 +1,8 @@
 "use client"
 
-import { SignIn } from "@clerk/nextjs"
-
 import { useSearchParams } from "next/navigation"
+
+import { SignIn } from "@clerk/nextjs"
 
 const Page = () => {
   const searchParams = useSearchParams()

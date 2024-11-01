@@ -1,10 +1,10 @@
 "use client"
 
+import { useRouter } from "next/navigation"
+
 import { useUser } from "@clerk/nextjs"
 import { useMutation } from "@tanstack/react-query"
 import { CheckIcon } from "lucide-react"
-
-import { useRouter } from "next/navigation"
 
 import { Heading } from "@/components/heading"
 import { MaxWidthWrapper } from "@/components/max-width-wrapper"

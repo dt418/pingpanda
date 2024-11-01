@@ -27,14 +27,14 @@ const config = [...compat.extends("next/core-web-vitals"), {
                     // 1. Node.js built-in modules
                     ['^node:', '^fs', '^path', '^os', '^http', '^https', '^url', '^stream'],
             
-                    // 2. React and other external libraries
-                    ['^react', '^@?\\w'],
+                    // 2. React and Next.js specific imports
+                    ['^react', '^next', '^@next'],
+                                
+                    // 3. Third-party modules and side effect imports
+                    ['^@?\\w'],
             
-                    // 3. Side effect imports (CSS, global styles)
+                    // 4. Side effect imports (CSS, global styles)
                     ['^\\u0000'],
-            
-                    // 4. Next.js specific imports
-                    ['^next', '^@next'],
             
                     // 5. Aliased imports (if using path aliases)
                     ['^@/'],

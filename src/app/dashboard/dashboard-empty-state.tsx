@@ -1,6 +1,6 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-
 import Image from "next/image"
+
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 import { CreateEventCategoryModal } from "@/components/create-event-category-modal"
 import { Button } from "@/components/ui/button"
