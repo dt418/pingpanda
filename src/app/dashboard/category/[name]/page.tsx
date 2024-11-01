@@ -1,4 +1,5 @@
 import { currentUser } from "@clerk/nextjs/server"
+
 import { notFound } from "next/navigation"
 
 import { DashboardPage } from "@/components/dashboard-page"

@@ -1,9 +1,10 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss';
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,7 +20,33 @@ const config = [...compat.extends("next/core-web-vitals"), {
         "tailwindcss": tailwindcssPlugin
     },
     rules: {
-        'simple-import-sort/imports': 'error',
+        'simple-import-sort/imports': [
+            'error',
+            {
+                groups: [
+                    // 1. Node.js built-in modules
+                    ['^node:', '^fs', '^path', '^os', '^http', '^https', '^url', '^stream'],
+            
+                    // 2. React and other external libraries
+                    ['^react', '^@?\\w'],
+            
+                    // 3. Side effect imports (CSS, global styles)
+                    ['^\\u0000'],
+            
+                    // 4. Next.js specific imports
+                    ['^next', '^@next'],
+            
+                    // 5. Aliased imports (if using path aliases)
+                    ['^@/'],
+            
+                    // 6. Internal components and utilities
+                    ['^components/', '^utils/', '^hooks/'],
+            
+                    // 7. Relative imports
+                    ['^\\.'],
+                  ],
+            },
+        ],
         'simple-import-sort/exports': 'error',
         'tailwindcss/classnames-order': 'warn', // Enforce order of classnames for Tailwind CSS
         'tailwindcss/no-custom-classname': 'warn', // Warns on custom class names not defined in Tailwind

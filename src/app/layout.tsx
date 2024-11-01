@@ -1,6 +1,7 @@
+import { ClerkProvider } from "@clerk/nextjs"
+
 import "./globals.css"
 
-import { ClerkProvider } from "@clerk/nextjs"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { EB_Garamond } from "next/font/google"

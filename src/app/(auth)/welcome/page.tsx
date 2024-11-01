@@ -2,10 +2,11 @@
 
 // synchronize auth status to database
 
+import { useEffect } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { LucideProps } from "lucide-react"
+
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
 
 import { Heading } from "@/components/heading"
 import { LoadingSpinner } from "@/components/loading-spinner"

@@ -1,5 +1,6 @@
-import { NextRequest, NextResponse } from "next/server"
 import { z } from "zod"
+
+import { NextRequest, NextResponse } from "next/server"
 
 import { FREE_QUOTA, PRO_QUOTA } from "@/config"
 import { db } from "@/db"

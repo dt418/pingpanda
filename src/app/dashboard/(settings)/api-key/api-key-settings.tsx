@@ -1,7 +1,7 @@
 "use client"
 
-import { CheckIcon, ClipboardIcon } from "lucide-react"
 import { useState } from "react"
+import { CheckIcon, ClipboardIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
