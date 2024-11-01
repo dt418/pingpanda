@@ -1,11 +1,13 @@
-import { db } from "@/db"
-import { router } from "../__internals/router"
-import { privateProcedure } from "../procedures"
 import { startOfDay, startOfMonth, startOfWeek } from "date-fns"
+import { HTTPException } from "hono/http-exception"
 import { z } from "zod"
+
+import { db } from "@/db"
 import { CATEGORY_NAME_VALIDATOR } from "@/lib/validators/category-validator"
 import { parseColor } from "@/utils"
-import { HTTPException } from "hono/http-exception"
+
+import { router } from "../__internals/router"
+import { privateProcedure } from "../procedures"
 
 export const categoryRouter = router({
   getEventCategories: privateProcedure.query(async ({ c, ctx }) => {

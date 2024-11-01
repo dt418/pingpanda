@@ -1,6 +1,8 @@
-import { cn } from "@/utils"
-import { Clock } from "lucide-react"
 import Image from "next/image"
+
+import { Clock } from "lucide-react"
+
+import { cn } from "@/utils"
 
 interface DiscordMessageProps {
   avatarSrc: string
@@ -39,30 +41,30 @@ export const DiscordMessage = ({
   badgeText,
 }: DiscordMessageProps) => {
   return (
-    <div className="w-full flex items-start justify-start">
-      <div className="flex items-center mb-2">
+    <div className="flex w-full items-start justify-start">
+      <div className="mb-2 flex items-center">
         <Image
           src={avatarSrc}
           alt={avatarAlt}
           width={40}
           height={40}
-          className="object-cover rounded-full mr-3"
+          className="mr-3 rounded-full object-cover"
         />
       </div>
 
       <div className="w-full max-w-xl">
         <div className="flex items-center">
           <p className="font-semibold text-white">{username}</p>
-          <span className="ml-2 px-1.5 py-0.5 text-xs font-semibold bg-brand-600 text-white rounded">
+          <span className="ml-2 rounded bg-brand-600 px-1.5 py-0.5 text-xs font-semibold text-white">
             APP
           </span>
-          <span className="text-gray-400 ml-1.5 text-xs font-normal">
+          <span className="ml-1.5 text-xs font-normal text-gray-400">
             {timestamp}
           </span>
         </div>
 
-        <div className="bg-[#2f3136] text-sm w-full rounded p-3 mb-4 mt-1.5">
-          <div className="flex flex-row items-center justify-between mb-2">
+        <div className="mb-4 mt-1.5 w-full rounded bg-[#2f3136] p-3 text-sm">
+          <div className="mb-2 flex flex-row items-center justify-between">
             {badgeText ? (
               <span
                 className={cn(
@@ -73,19 +75,19 @@ export const DiscordMessage = ({
                 {badgeText}
               </span>
             ) : null}
-            <p className="text-white order-1 text-base/7 font-semibold">
+            <p className="order-1 text-base/7 font-semibold text-white">
               {title}
             </p>
           </div>
 
           {Object.entries(content).map(([key, value]) => (
-            <p key={key} className="text-[#dcddde] text-sm/6">
+            <p key={key} className="text-sm/6 text-[#dcddde]">
               <span className="text-[#b9bbbe]">{key}:</span> {value}
             </p>
           ))}
 
-          <p className="text-[#72767d] text-xs mt-2 flex items-center">
-            <Clock className="size-3 mr-1" />
+          <p className="mt-2 flex items-center text-xs text-[#72767d]">
+            <Clock className="mr-1 size-3" />
             {timestamp}
           </p>
         </div>

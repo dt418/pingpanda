@@ -1,7 +1,10 @@
+import { redirect } from "next/navigation"
+
+import { currentUser } from "@clerk/nextjs/server"
+
 import { DashboardPage } from "@/components/dashboard-page"
 import { db } from "@/db"
-import { currentUser } from "@clerk/nextjs/server"
-import { redirect } from "next/navigation"
+
 import { ApiKeySettings } from "./api-key-settings"
 
 const Page = async () => {

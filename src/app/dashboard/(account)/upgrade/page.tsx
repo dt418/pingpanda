@@ -1,7 +1,10 @@
+import { redirect } from "next/navigation"
+
+import { currentUser } from "@clerk/nextjs/server"
+
 import { DashboardPage } from "@/components/dashboard-page"
 import { db } from "@/db"
-import { currentUser } from "@clerk/nextjs/server"
-import { redirect } from "next/navigation"
+
 import { UpgradePageContent } from "./upgrade-page-content"
 
 const Page = async () => {

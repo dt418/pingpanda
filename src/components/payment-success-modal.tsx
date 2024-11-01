@@ -1,13 +1,17 @@
 "use client"
 
-import { client } from "@/lib/client"
-import { useQuery } from "@tanstack/react-query"
-import { useRouter } from "next/navigation"
 import { useState } from "react"
-import { Modal } from "./ui/modal"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+
+import { useQuery } from "@tanstack/react-query"
+import { CheckIcon } from "lucide-react"
+
+import { client } from "@/lib/client"
+
 import { LoadingSpinner } from "./loading-spinner"
 import { Button } from "./ui/button"
-import { CheckIcon } from "lucide-react"
+import { Modal } from "./ui/modal"
 
 export const PaymentSuccessModal = () => {
   const router = useRouter()
@@ -41,30 +45,32 @@ export const PaymentSuccessModal = () => {
     >
       <div className="flex flex-col items-center">
         {isPending || !isPaymentSuccessful ? (
-          <div className="flex flex-col items-center justify-center h-64">
+          <div className="flex h-64 flex-col items-center justify-center">
             <LoadingSpinner className="mb-4" />
             <p className="text-lg/7 font-medium text-gray-900">
               Upgrading your account...
             </p>
-            <p className="text-gray-600 text-sm/6 mt-2 text-center text-pretty">
+            <p className="mt-2 text-pretty text-center text-sm/6 text-gray-600">
               Please wait while we process your upgrade. This may take a moment.
             </p>
           </div>
         ) : (
           <>
-            <div className="relative aspect-video border border-gray-200 w-full overflow-hidden rounded-lg bg-gray-50">
-              <img
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+              <Image
                 src="/brand-asset-heart.png"
                 className="h-full w-full object-cover"
                 alt="Payment success"
+                fill
+                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 700px"
               />
             </div>
 
             <div className="mt-6 flex flex-col items-center gap-1 text-center">
-              <p className="text-lg/7 tracking-tight font-medium text-pretty">
+              <p className="text-pretty text-lg/7 font-medium tracking-tight">
                 Upgrade successful! 🎉
               </p>
-              <p className="text-gray-600 text-sm/6 text-pretty">
+              <p className="text-pretty text-sm/6 text-gray-600">
                 Thank you for upgrading to Pro and supporting PingPanda. Your
                 account has been upgraded.
               </p>

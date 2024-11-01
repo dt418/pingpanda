@@ -1,11 +1,13 @@
 "use client"
 
+import { useState } from "react"
+
+import { CheckIcon, ClipboardIcon } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { CheckIcon, ClipboardIcon } from "lucide-react"
-import { useState } from "react"
 
 export const ApiKeySettings = ({ apiKey }: { apiKey: string }) => {
   const [copySuccess, setCopySuccess] = useState(false)
@@ -17,16 +19,16 @@ export const ApiKeySettings = ({ apiKey }: { apiKey: string }) => {
   }
 
   return (
-    <Card className="max-w-xl w-full">
+    <Card className="w-full max-w-xl">
       <div>
         <Label>Your API Key</Label>
-        <div className="mt-1 relative">
+        <div className="relative mt-1">
           <Input type="password" value={apiKey} readOnly />
-          <div className="absolute space-x-0.5 inset-y-0 right-0 flex items-center">
+          <div className="absolute inset-y-0 right-0 flex items-center space-x-0.5">
             <Button
               variant="ghost"
               onClick={copyApiKey}
-              className="p-1 w-10 focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-10 p-1 focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               {copySuccess ? (
                 <CheckIcon className="size-4 text-brand-900" />

@@ -1,5 +1,6 @@
-import { cn } from "@/utils"
 import { HTMLAttributes } from "react"
+
+import { cn } from "@/utils"
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   contentClassName?: string
@@ -22,8 +23,8 @@ export const Card = ({
       <div className={cn("relative z-10 p-6", contentClassName)}>
         {children}
       </div>
-      <div className="absolute z-0 inset-px rounded-lg bg-white" />
-      <div className="pointer-events-none z-0 absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5" />
+      <div className="absolute inset-px z-0 rounded-lg bg-white" />
+      <div className="pointer-events-none absolute inset-px z-0 rounded-lg shadow-sm ring-1 ring-black/5" />
     </div>
   )
 }

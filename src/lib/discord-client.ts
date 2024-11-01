@@ -1,9 +1,9 @@
 import { REST } from "@discordjs/rest"
 import {
+  APIEmbed,
   RESTPostAPIChannelMessageResult,
   RESTPostAPICurrentUserCreateDMChannelResult,
   Routes,
-  APIEmbed,
 } from "discord-api-types/v10"
 
 export class DiscordClient {
