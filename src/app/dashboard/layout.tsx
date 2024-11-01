@@ -5,7 +5,6 @@ import Link from "next/link"
 
 import { UserButton } from "@clerk/nextjs"
 import { Gem, Home, Key, LucideIcon, Menu, Settings, X } from "lucide-react"
-import { Drawer } from "vaul"
 
 import { buttonVariants } from "@/components/ui/button"
 import { Modal } from "@/components/ui/modal"
