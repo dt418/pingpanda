@@ -13,9 +13,14 @@ import { createCheckoutSession } from "@/lib/stripe"
 import { DashboardPageContent } from "./dashboard-page-content"
 
 interface PageProps {
-  searchParams: {
-    [key: string]: string | string[] | undefined
-  }
+  searchParams: Promise<
+    {
+      [key: string]: string | string[] | undefined
+    } & {
+      intent?: string
+      success?: string
+    }
+  >
 }
 
 const Page = async ({ searchParams }: PageProps) => {
@@ -33,7 +38,7 @@ const Page = async ({ searchParams }: PageProps) => {
     return redirect("/welcome")
   }
 
-  const intent = searchParams.intent
+  const { intent, success } = await searchParams
 
   if (intent === "upgrade") {
     const session = await createCheckoutSession({
@@ -43,8 +48,6 @@ const Page = async ({ searchParams }: PageProps) => {
 
     if (session.url) redirect(session.url)
   }
-
-  const success = searchParams.success
 
   return (
     <>

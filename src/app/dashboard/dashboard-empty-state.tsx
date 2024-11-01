@@ -21,13 +21,13 @@ export const DashboardEmptyState = () => {
 
   return (
     <Card className="flex flex-1 flex-col items-center justify-center rounded-2xl p-6 text-center">
-      <div className="flex w-full justify-center">
+      <div className="relative flex w-full justify-center">
         <Image
           src="/brand-asset-wave.png"
           alt="No categories"
-          className="-mt-24 size-48"
-          width={48}
-          height={48}
+          className="size-[144] md:-mt-24"
+          width={144}
+          height={144}
         />
       </div>
 
