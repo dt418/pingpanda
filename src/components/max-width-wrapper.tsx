@@ -1,5 +1,6 @@
-import { cn } from "@/utils"
 import { ReactNode } from "react"
+
+import { cn } from "@/utils"
 
 interface MaxWidthWrapperProps {
   className?: string

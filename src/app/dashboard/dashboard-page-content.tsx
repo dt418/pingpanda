@@ -1,14 +1,16 @@
 "use client"
 
-import { LoadingSpinner } from "@/components/loading-spinner"
-import { Button, buttonVariants } from "@/components/ui/button"
-import { Modal } from "@/components/ui/modal"
-import { client } from "@/lib/client"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { format, formatDistanceToNow } from "date-fns"
 import { ArrowRight, BarChart2, Clock, Database, Trash2 } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+
+import { LoadingSpinner } from "@/components/loading-spinner"
+import { Button, buttonVariants } from "@/components/ui/button"
+import { Modal } from "@/components/ui/modal"
+import { client } from "@/lib/client"
+
 import { DashboardEmptyState } from "./dashboard-empty-state"
 
 export const DashboardPageContent = () => {
@@ -38,7 +40,7 @@ export const DashboardPageContent = () => {
 
   if (isEventCategoriesLoading) {
     return (
-      <div className="flex items-center justify-center flex-1 h-full w-full">
+      <div className="flex h-full w-full flex-1 items-center justify-center">
         <LoadingSpinner />
       </div>
     )
@@ -50,18 +52,18 @@ export const DashboardPageContent = () => {
 
   return (
     <>
-      <ul className="grid max-w-6xl grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-        {categories.map((category) => (
+      <ul className="grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        {categories.map((category: any) => (
           <li
             key={category.id}
-            className="relative group z-10 transition-all duration-200 hover:-translate-y-0.5"
+            className="group relative z-10 transition-all duration-200 hover:-translate-y-0.5"
           >
-            <div className="absolute z-0 inset-px rounded-lg bg-white" />
+            <div className="absolute inset-px z-0 rounded-lg bg-white" />
 
-            <div className="pointer-events-none z-0 absolute inset-px rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md ring-1 ring-black/5" />
+            <div className="pointer-events-none absolute inset-px z-0 rounded-lg shadow-sm ring-1 ring-black/5 transition-all duration-300 group-hover:shadow-md" />
 
-            <div className="relative p-6 z-10">
-              <div className="flex items-center gap-4 mb-6">
+            <div className="relative z-10 p-6">
+              <div className="mb-6 flex items-center gap-4">
                 <div
                   className="size-12 rounded-full"
                   style={{
@@ -81,9 +83,9 @@ export const DashboardPageContent = () => {
                 </div>
               </div>
 
-              <div className="space-y-3 mb-6">
+              <div className="mb-6 space-y-3">
                 <div className="flex items-center text-sm/5 text-gray-600">
-                  <Clock className="size-4 mr-2 text-brand-500" />
+                  <Clock className="mr-2 size-4 text-brand-500" />
                   <span className="font-medium">Last ping:</span>
                   <span className="ml-1">
                     {category.lastPing
@@ -92,18 +94,18 @@ export const DashboardPageContent = () => {
                   </span>
                 </div>
                 <div className="flex items-center text-sm/5 text-gray-600">
-                  <Database className="size-4 mr-2 text-brand-500" />
+                  <Database className="mr-2 size-4 text-brand-500" />
                   <span className="font-medium">Unique fields:</span>
                   <span className="ml-1">{category.uniqueFieldCount || 0}</span>
                 </div>
                 <div className="flex items-center text-sm/5 text-gray-600">
-                  <BarChart2 className="size-4 mr-2 text-brand-500" />
+                  <BarChart2 className="mr-2 size-4 text-brand-500" />
                   <span className="font-medium">Events this month:</span>
                   <span className="ml-1">{category.eventsCount || 0}</span>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between mt-4">
+              <div className="mt-4 flex items-center justify-between">
                 <Link
                   href={`/dashboard/category/${category.name}`}
                   className={buttonVariants({
@@ -117,7 +119,7 @@ export const DashboardPageContent = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-gray-500 hover:text-red-600 transition-colors"
+                  className="text-gray-500 transition-colors hover:text-red-600"
                   aria-label={`Delete ${category.name} category`}
                   onClick={() => setDeletingCategory(category.name)}
                 >
@@ -140,12 +142,12 @@ export const DashboardPageContent = () => {
               Delete Category
             </h2>
             <p className="text-sm/6 text-gray-600">
-              Are you sure you want to delete the category "{deletingCategory}"?
+              Are you sure you want to delete the category {deletingCategory}?
               This action cannot be undone.
             </p>
           </div>
 
-          <div className="flex justify-end space-x-3 pt-4 border-t">
+          <div className="flex justify-end space-x-3 border-t pt-4">
             <Button variant="outline" onClick={() => setDeletingCategory(null)}>
               Cancel
             </Button>

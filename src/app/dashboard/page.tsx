@@ -1,13 +1,15 @@
-import { DashboardPage } from "@/components/dashboard-page"
-import { db } from "@/db"
 import { currentUser } from "@clerk/nextjs/server"
-import { redirect } from "next/navigation"
-import { DashboardPageContent } from "./dashboard-page-content"
-import { CreateEventCategoryModal } from "@/components/create-event-category-modal"
-import { Button } from "@/components/ui/button"
 import { PlusIcon } from "lucide-react"
-import { createCheckoutSession } from "@/lib/stripe"
+import { redirect } from "next/navigation"
+
+import { CreateEventCategoryModal } from "@/components/create-event-category-modal"
+import { DashboardPage } from "@/components/dashboard-page"
 import { PaymentSuccessModal } from "@/components/payment-success-modal"
+import { Button } from "@/components/ui/button"
+import { db } from "@/db"
+import { createCheckoutSession } from "@/lib/stripe"
+
+import { DashboardPageContent } from "./dashboard-page-content"
 
 interface PageProps {
   searchParams: {
@@ -51,7 +53,7 @@ const Page = async ({ searchParams }: PageProps) => {
         cta={
           <CreateEventCategoryModal>
             <Button className="w-full sm:w-fit">
-              <PlusIcon className="size-4 mr-2" />
+              <PlusIcon className="mr-2 size-4" />
               Add Category
             </Button>
           </CreateEventCategoryModal>

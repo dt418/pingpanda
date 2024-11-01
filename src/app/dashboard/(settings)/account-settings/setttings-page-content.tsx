@@ -1,13 +1,14 @@
 "use client"
 
+import { useMutation } from "@tanstack/react-query"
+import Link from "next/link"
+import { useState } from "react"
+
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { client } from "@/lib/client"
-import { useMutation } from "@tanstack/react-query"
-import Link from "next/link"
-import { useState } from "react"
 
 export const AccountSettings = ({
   discordId: initialDiscordId,
@@ -24,7 +25,7 @@ export const AccountSettings = ({
   })
 
   return (
-    <Card className="max-w-xl w-full space-y-4">
+    <Card className="w-full max-w-xl space-y-4">
       <div className="pt-2">
         <Label>Discord ID</Label>
         <Input
@@ -36,7 +37,7 @@ export const AccountSettings = ({
       </div>
 
       <p className="mt-2 text-sm/6 text-gray-600">
-        Don't know how to find your Discord ID?{" "}
+        Don&apos;t know how to find your Discord ID?
         <Link href="#" className="text-brand-600 hover:text-brand-500">
           Learn how to obtain it here
         </Link>

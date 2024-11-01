@@ -1,14 +1,15 @@
-import { Heading } from "@/components/heading"
-import { MaxWidthWrapper } from "@/components/max-width-wrapper"
 import { Check, Star } from "lucide-react"
-import { ShinyButton } from "@/components/shiny-button"
-import { MockDiscordUI } from "@/components/mock-discord-ui"
-import { AnimatedList, AnimatedListItem } from "@/components/ui/animated-list"
-import { DiscordMessage } from "@/components/discord-message"
 import Image from "next/image"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
+
+import { DiscordMessage } from "@/components/discord-message"
+import { Heading } from "@/components/heading"
 import { Icons } from "@/components/icons"
+import { MaxWidthWrapper } from "@/components/max-width-wrapper"
+import { MockDiscordUI } from "@/components/mock-discord-ui"
+import { ShinyButton } from "@/components/shiny-button"
+import { AnimatedList } from "@/components/ui/animated-list"
 
 const Page = () => {
   const codeSnippet = `await fetch("http://localhost:3000/api/v1/events", {
@@ -28,20 +29,20 @@ const Page = () => {
 
   return (
     <>
-      <section className="relative py-24 sm:py-32 bg-brand-25">
+      <section className="relative bg-brand-25 py-24 sm:py-32">
         <MaxWidthWrapper className="text-center">
-          <div className="relative mx-auto text-center flex flex-col items-center gap-10">
+          <div className="relative mx-auto flex flex-col items-center gap-10 text-center">
             <div>
               <Heading>
                 <span>Real-Time SaaS Insights,</span>
                 <br />
-                <span className="relative bg-gradient-to-r from-brand-700 to-brand-800 text-transparent bg-clip-text">
+                <span className="relative bg-gradient-to-r from-brand-700 to-brand-800 bg-clip-text text-transparent">
                   Delivered to Your Discord
                 </span>
               </Heading>
             </div>
 
-            <p className="text-base/7 text-gray-600 max-w-prose text-center text-pretty">
+            <p className="max-w-prose text-pretty text-center text-base/7 text-gray-600">
               PingPanda is the easiest way to monitor your SaaS. Get instant
               notifications for{" "}
               <span className="font-semibold text-gray-700">
@@ -50,13 +51,13 @@ const Page = () => {
               sent directly to your Discord.
             </p>
 
-            <ul className="space-y-2 text-base/7 text-gray-600 text-left flex flex-col items-start">
+            <ul className="flex flex-col items-start space-y-2 text-left text-base/7 text-gray-600">
               {[
                 "Real-time Discord alerts for critical events",
                 "Buy once, use forever",
                 "Track sales, new users, or any other event",
               ].map((item, index) => (
-                <li key={index} className="flex gap-1.5 items-center text-left">
+                <li key={index} className="flex items-center gap-1.5 text-left">
                   <Check className="size-5 shrink-0 text-brand-700" />
                   {item}
                 </li>
@@ -129,7 +130,7 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="relative py-24 sm:py-32 bg-brand-25">
+      <section className="relative bg-brand-25 py-24 sm:py-32">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
             <h2 className="text-center text-base/7 font-semibold text-brand-600">
@@ -150,7 +151,7 @@ const Page = () => {
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                     Get notified about critical events the moment they happen,
-                    no matter if you're at home or on the go.
+                    no matter if you&apos;re at home or on the go.
                   </p>
                 </div>
 
@@ -280,7 +281,7 @@ const Page = () => {
         </MaxWidthWrapper>
       </section>
 
-      <section className="relative py-24 sm:py-32 bg-white">
+      <section className="relative bg-white py-24 sm:py-32">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
             <h2 className="text-center text-base/7 font-semibold text-brand-600">
@@ -289,24 +290,24 @@ const Page = () => {
             <Heading className="text-center">What our customers say</Heading>
           </div>
 
-          <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 divide-y divide-gray-200 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:divide-x lg:divide-y-0">
             {/* first customer review */}
-            <div className="flex flex-auto flex-col gap-4 bg-brand-25 p-6 sm:p-8 lg:p-16 rounded-t-[2rem] lg:rounded-tr-none lg:rounded-l-[2rem]">
-              <div className="flex gap-0.5 mb-2 justify-center lg:justify-start">
-                <Star className="size-5 text-brand-600 fill-brand-600" />
-                <Star className="size-5 text-brand-600 fill-brand-600" />
-                <Star className="size-5 text-brand-600 fill-brand-600" />
-                <Star className="size-5 text-brand-600 fill-brand-600" />
-                <Star className="size-5 text-brand-600 fill-brand-600" />
+            <div className="flex flex-auto flex-col gap-4 rounded-t-[2rem] bg-brand-25 p-6 sm:p-8 lg:rounded-l-[2rem] lg:rounded-tr-none lg:p-16">
+              <div className="mb-2 flex justify-center gap-0.5 lg:justify-start">
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
               </div>
 
-              <p className="text-base sm:text-lg lg:text-lg/8 font-medium tracking-tight text-brand-950 text-center lg:text-left text-pretty">
-                PingPanda has been a game-changer for me. I've been using it for
+              <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
+                PingPanda has been a game-changer for me. I&apos;ve been using it for
                 two months now and seeing sales pop up in real-time is super
                 satisfying.
               </p>
 
-              <div className="flex flex-col justify-center lg:justify-start sm:flex-row items-center sm:items-start gap-4 mt-2">
+              <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start lg:justify-start">
                 <Image
                   src="/user-2.png"
                   className="rounded-full object-cover"
@@ -315,9 +316,9 @@ const Page = () => {
                   height={48}
                 />
                 <div className="flex flex-col items-center sm:items-start">
-                  <p className="font-semibold flex items-center">
+                  <p className="flex items-center font-semibold">
                     Freya Larsson
-                    <Icons.verificationBadge className="size-4 inline-block ml-1.5" />
+                    <Icons.verificationBadge className="ml-1.5 inline-block size-4" />
                   </p>
                   <p className="text-sm text-gray-600">@itsfreya</p>
                 </div>
@@ -325,22 +326,22 @@ const Page = () => {
             </div>
 
             {/* second customer review */}
-            <div className="flex flex-auto flex-col gap-4 bg-brand-25 p-6 sm:p-8 lg:p-16 rounded-b-[2rem] lg:rounded-bl-none lg:rounded-r-[2rem]">
-              <div className="flex gap-0.5 mb-2 justify-center lg:justify-start">
-                <Star className="size-5 text-brand-600 fill-brand-600" />
-                <Star className="size-5 text-brand-600 fill-brand-600" />
-                <Star className="size-5 text-brand-600 fill-brand-600" />
-                <Star className="size-5 text-brand-600 fill-brand-600" />
-                <Star className="size-5 text-brand-600 fill-brand-600" />
+            <div className="flex flex-auto flex-col gap-4 rounded-b-[2rem] bg-brand-25 p-6 sm:p-8 lg:rounded-r-[2rem] lg:rounded-bl-none lg:p-16">
+              <div className="mb-2 flex justify-center gap-0.5 lg:justify-start">
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
               </div>
 
-              <p className="text-base sm:text-lg lg:text-lg/8 font-medium tracking-tight text-brand-950 text-center lg:text-left text-pretty">
-                PingPanda's been paying off for our SaaS. Nice to have simple
-                way to see how we're doing day-to-day. Definitely makes our
+              <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
+                PingPanda&apos;s been paying off for our SaaS. Nice to have simple
+                way to see how we&apos;re doing day-to-day. Definitely makes our
                 lives easier.
               </p>
 
-              <div className="flex flex-col justify-center lg:justify-start sm:flex-row items-center sm:items-start gap-4 mt-2">
+              <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start lg:justify-start">
                 <Image
                   src="/user-1.png"
                   className="rounded-full object-cover"
@@ -349,9 +350,9 @@ const Page = () => {
                   height={48}
                 />
                 <div className="flex flex-col items-center sm:items-start">
-                  <p className="font-semibold flex items-center">
+                  <p className="flex items-center font-semibold">
                     Kai Durant
-                    <Icons.verificationBadge className="size-4 inline-block ml-1.5" />
+                    <Icons.verificationBadge className="ml-1.5 inline-block size-4" />
                   </p>
                   <p className="text-sm text-gray-600">@kdurant_</p>
                 </div>

@@ -1,10 +1,11 @@
-import { Card } from "@/components/ui/card"
-import { client } from "@/lib/client"
 import { useQuery } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism"
+
+import { Card } from "@/components/ui/card"
+import { client } from "@/lib/client"
 
 export const EmptyCategoryState = ({
   categoryName,
@@ -50,24 +51,24 @@ export const EmptyCategoryState = ({
   return (
     <Card
       contentClassName="max-w-2xl w-full flex flex-col items-center p-6"
-      className="flex-1 flex items-center justify-center"
+      className="flex flex-1 items-center justify-center"
     >
-      <h2 className="text-xl/8 font-medium text-center tracking-tight text-gray-950">
+      <h2 className="text-center text-xl/8 font-medium tracking-tight text-gray-950">
         Create your first {categoryName} event
       </h2>
-      <p className="text-sm/6 text-gray-600 mb-8 max-w-md text-center text-pretty">
+      <p className="mb-8 max-w-md text-pretty text-center text-sm/6 text-gray-600">
         Get started by sending a request to our tracking API:
       </p>
 
-      <div className="w-full max-w-3xl bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="bg-gray-800 px-4 py-2 flex justify-between items-center">
+      <div className="w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-lg">
+        <div className="flex items-center justify-between bg-gray-800 px-4 py-2">
           <div className="flex space-x-2">
             <div className="size-3 rounded-full bg-red-500" />
             <div className="size-3 rounded-full bg-yellow-500" />
             <div className="size-3 rounded-full bg-green-500" />
           </div>
 
-          <span className="text-gray-400 text-sm">your-first-event.js</span>
+          <span className="text-sm text-gray-400">your-first-event.js</span>
         </div>
 
         <SyntaxHighlighter
@@ -86,14 +87,14 @@ export const EmptyCategoryState = ({
       </div>
 
       <div className="mt-8 flex flex-col items-center space-x-2">
-        <div className="flex gap-2 items-center">
-          <div className="size-2 bg-green-500 rounded-full animate-pulse" />
+        <div className="flex items-center gap-2">
+          <div className="size-2 animate-pulse rounded-full bg-green-500" />
           <span className="text-sm text-gray-600">
             Listening to incoming events...
           </span>
         </div>
 
-        <p className="text-sm/6 text-gray-600 mt-2">
+        <p className="mt-2 text-sm/6 text-gray-600">
           Need help? Check out our{" "}
           <a href="#" className="text-blue-600 hover:underline">
             documentation

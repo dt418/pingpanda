@@ -1,14 +1,14 @@
 "use client"
 
-import { Heading } from "@/components/heading"
-import { MaxWidthWrapper } from "@/components/max-width-wrapper"
-import { Button } from "@/components/ui/button"
-import { client } from "@/lib/client"
-import { createCheckoutSession } from "@/lib/stripe"
 import { useUser } from "@clerk/nextjs"
 import { useMutation } from "@tanstack/react-query"
 import { CheckIcon } from "lucide-react"
 import { useRouter } from "next/navigation"
+
+import { Heading } from "@/components/heading"
+import { MaxWidthWrapper } from "@/components/max-width-wrapper"
+import { Button } from "@/components/ui/button"
+import { client } from "@/lib/client"
 
 const Page = () => {
   const { user } = useUser()
@@ -44,15 +44,15 @@ const Page = () => {
       <MaxWidthWrapper>
         <div className="mx-auto max-w-2xl sm:text-center">
           <Heading className="text-center">Simple no-tricks pricing</Heading>
-          <p className="mt-6 text-base/7 text-gray-600 max-w-prose text-center text-pretty">
-            We hate subscriptions. And chances are, you do too. That's why we
+          <p className="mt-6 max-w-prose text-pretty text-center text-base/7 text-gray-600">
+            We hate subscriptions. And chances are, you do too. That&apos;s why we
             offer lifetime access to PingPanda for a one-time payment.
           </p>
         </div>
 
-        <div className="bg-white mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+        <div className="mx-auto mt-16 max-w-2xl rounded-3xl bg-white ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
-            <h3 className="text-3xl font-heading font-semibold tracking-tight text-gray-900">
+            <h3 className="font-heading text-3xl font-semibold tracking-tight text-gray-900">
               Lifetime access
             </h3>
 
@@ -63,7 +63,7 @@ const Page = () => {
             </p>
             <div className="mt-10 flex items-center gap-x-4">
               <h4 className="flex-none text-sm font-semibold leading-6 text-brand-600">
-                What's included
+                What&apos;s included
               </h4>
               <div className="h-px flex-auto bg-gray-100" />
             </div>
