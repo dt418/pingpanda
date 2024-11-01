@@ -40,7 +40,7 @@ const config = [...compat.extends("next/core-web-vitals"), {
                     ['^@/'],
             
                     // 6. Internal components and utilities
-                    ['^components/', '^utils/', '^hooks/'],
+                    ['^components/', '^utils/', '^hooks/', "^lib/"],
             
                     // 7. Relative imports
                     ['^\\.'],
